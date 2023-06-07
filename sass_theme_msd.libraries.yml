@@ -1,0 +1,15 @@
+# Main theme library.
+global:
+  js:
+    js/copy-it.js: {}
+    js/local-menu.js: {}
+  css:
+    base:
+      css/style.css: {}
+slick:
+  js:
+    libs/slick.min.js: {}
+  css:
+    component:
+      libs/slick-theme.css: {}
+      libs/slick.css: {}
