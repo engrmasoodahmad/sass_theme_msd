@@ -3,6 +3,8 @@ global:
   js:
     js/copy-it.js: {}
     js/local-menu.js: {}
+  dependencies:
+    - core/jquery
   css:
     base:
       css/style.css: {}
