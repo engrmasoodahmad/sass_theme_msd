@@ -1,0 +1,398 @@
+@charset "UTF-8";
+/* One should use it like this
+
+.example {
+  font-size: calculate-values (12, 20, 768, 1280);
+*/
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-Black.otf);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-ExtraBold.otf);
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-SemiBold.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-Medium.otf);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-Light.otf);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat_otf/Montserrat-ExtraLight.otf);
+  font-weight: 200;
+  font-style: normal;
+}
+/******************/
+/******************/
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-LightItalic.ttf);
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-MediumItalic.ttf);
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf);
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-ExtraBold.ttf);
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(../fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf);
+  font-weight: 800;
+  font-style: italic;
+}
+/******************/
+/******************/
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf);
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto-Condensed;
+  src: url(../fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+/* stylelint-disable */
+/* stylelint-enable */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-family: Open-Sans, sans-serif;
+}
+
+.container {
+  padding-inline: 24px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.facebook {
+  background-image: url("../icons/social-icons/rounded/facebook.svg");
+}
+
+.youtube {
+  background-image: url("../icons/social-icons/rounded/youtube.svg");
+}
+
+.twitter {
+  background-image: url("../icons/social-icons/rounded/twitter.svg");
+}
+
+.pinterest {
+  background-image: url("../icons/social-icons/rounded/pinterest.svg");
+}
+
+.instagram {
+  background-image: url("../icons/social-icons/rounded/instagram.svg");
+}
+
+.linkedin {
+  background-image: url("../icons/social-icons/rounded/linkedin.svg");
+}
+
+.googleplus {
+  background-image: url("../icons/social-icons/rounded/googleplus.svg");
+}
+
+.whatsapp {
+  background-image: url("../icons/social-icons/rounded/whatsapp.svg");
+}
+
+.snapchat {
+  background-image: url("../icons/social-icons/rounded/snapchat.svg");
+}
+
+.feed {
+  background-image: url("../icons/social-icons/rounded/feed.svg");
+}
+
+.flipboard {
+  background-image: url("../icons/social-icons/rounded/flipboard.svg");
+}
+
+.messenger {
+  background-image: url("../icons/social-icons/rounded/messenger.svg");
+}
+
+.reddit {
+  background-image: url("../icons/social-icons/rounded/reddit.svg");
+}
+
+.skype {
+  background-image: url("../icons/social-icons/rounded/skype.svg");
+}
+
+.success-message {
+  position: fixed;
+  z-index: 5000;
+  top: 80px;
+  right: 0;
+  left: 0;
+  padding: 1.5rem 3.5rem;
+  padding-left: 6rem;
+  color: black;
+  border: 2px solid #cfe8d3;
+  border-radius: 8px;
+  background-color: #f1f8f4;
+}
+.success-message::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  content: "✓";
+  transform: translate(30%, -50%);
+  color: #51dc6c;
+  border: 10px solid #51dc6c;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 1.5rem;
+}
+
+.error-message {
+  position: fixed;
+  z-index: 5000;
+  top: 80px;
+  right: 0;
+  left: 0;
+  padding: 1.5rem 3.5rem;
+  padding-left: 6rem;
+  color: black;
+  border: 2px solid #ecc1b6;
+  border-radius: 8px;
+  background-color: #faeeea;
+}
+.error-message::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  content: "❌";
+  transform: translate(30%, -50%);
+  color: #fb5858;
+  border: 10px solid #fb5858;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 11px;
+}
+
+.info-message {
+  position: fixed;
+  z-index: 5000;
+  top: 80px;
+  right: 0;
+  left: 0;
+  padding: 1.5rem 3.5rem;
+  padding-left: 6rem;
+  color: black;
+  border: 2px solid #ffd56c;
+  border-radius: 8px;
+  background-color: #fff9c4;
+}
+.info-message::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  content: "!";
+  transform: translate(30%, -50%);
+  color: #e9ba43;
+  border: 10px solid #e9ba43;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.message-wrapper {
+  position: relative;
+}
+.message-wrapper .cross {
+  position: absolute;
+  top: -8px;
+  right: 4px;
+  cursor: pointer;
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.primary-tabs {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  list-style: none;
+  border-bottom: 2px solid black;
+  background: white;
+  gap: 1rem;
+  padding-top: 4px;
+}
+.primary-tabs li a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+}
+.primary-tabs li a.is-active {
+  display: inline-block;
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background: #0f1618;
+}
+@media (min-width: 768px) {
+  .primary-tabs {
+    position: unset;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
