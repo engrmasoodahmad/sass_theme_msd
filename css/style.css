@@ -258,7 +258,7 @@ body {
 
 .success-message {
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;
@@ -289,7 +289,7 @@ body {
 
 .error-message {
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;
@@ -320,7 +320,7 @@ body {
 
 .info-message {
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;

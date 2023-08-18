@@ -3,7 +3,7 @@
 .success-message {
   @extend .container;
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;
@@ -36,7 +36,7 @@
 .error-message {
   @extend .container;
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;
@@ -69,7 +69,7 @@
 .info-message {
   @extend .container;
   position: fixed;
-  z-index: 5000;
+  z-index: 50;
   top: 80px;
   right: 0;
   left: 0;
