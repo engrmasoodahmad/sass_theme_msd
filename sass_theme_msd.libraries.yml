@@ -15,3 +15,8 @@ slick:
     component:
       libs/slick-theme.css: {}
       libs/slick.css: {}
+fontawesome:
+  version: 5.15.4
+  css:
+    theme:
+      libs/fontawesome/css/all.css: {}

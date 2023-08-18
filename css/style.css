@@ -178,17 +178,17 @@ body {
   font-family: Open-Sans, sans-serif;
 }
 
-.container {
+.container, .info-message, .error-message, .success-message {
   padding-inline: 24px;
   margin-inline: auto;
 }
 @media (min-width: 768px) {
-  .container {
+  .container, .info-message, .error-message, .success-message {
     padding-inline: 1rem;
   }
 }
 @media (min-width: 1280px) {
-  .container {
+  .container, .info-message, .error-message, .success-message {
     max-width: 1180px;
   }
 }

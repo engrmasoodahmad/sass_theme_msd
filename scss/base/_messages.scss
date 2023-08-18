@@ -1,6 +1,7 @@
 // STATUS MESSAGES
 
 .success-message {
+  @extend .container;
   position: fixed;
   z-index: 5000;
   top: 80px;
@@ -31,7 +32,9 @@
     font-size: 1.5rem;
   }
 }
+
 .error-message {
+  @extend .container;
   position: fixed;
   z-index: 5000;
   top: 80px;
@@ -43,6 +46,7 @@
   border: 2px solid #ecc1b6;
   border-radius: 8px;
   background-color: #faeeea;
+
   &::before {
     position: absolute;
     top: 50%;
@@ -61,7 +65,9 @@
     font-size: 11px;
   }
 }
+
 .info-message {
+  @extend .container;
   position: fixed;
   z-index: 5000;
   top: 80px;
@@ -73,6 +79,7 @@
   border: 2px solid #ffd56c;
   border-radius: 8px;
   background-color: #fff9c4;
+
   &::before {
     position: absolute;
     top: 50%;
@@ -92,8 +99,10 @@
     font-weight: bold;
   }
 }
+
 .message-wrapper {
   position: relative;
+
   .cross {
     position: absolute;
     top: -8px;
