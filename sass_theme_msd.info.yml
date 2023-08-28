@@ -7,9 +7,10 @@ core: 8.x
 core_version_requirement: ^8 || ^9 || ^10 || ^11
 libraries:
   - sass_theme_msd/global
-  - sass_theme_msd/owl
+  - sass_theme_msd/slick
+  - sass_theme_msd/fontawesome
 regions:
-  menubar: 'Menu bar'
+  menubar: "Menu bar"
   header: Header
   primary_menu: "Primary menu"
   secondary_menu: "Secondary menu"

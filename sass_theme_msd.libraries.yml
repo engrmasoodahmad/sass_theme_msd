@@ -1,13 +1,4 @@
 # Main theme library.
-global:
-  js:
-    js/copy-it.js: {}
-    js/local-menu.js: {}
-  dependencies:
-    - core/jquery
-  css:
-    base:
-      css/style.css: {}
 slick:
   js:
     libs/slick.min.js: {}
@@ -15,6 +6,16 @@ slick:
     component:
       libs/slick-theme.css: {}
       libs/slick.css: {}
+global:
+  js:
+    js/copy-it.js: {}
+    js/local-menu.js: {}
+    js/sliders.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    base:
+      css/style.css: {}
 fontawesome:
   version: 5.15.4
   css:
