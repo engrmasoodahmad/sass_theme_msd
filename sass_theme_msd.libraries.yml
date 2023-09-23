@@ -12,6 +12,7 @@ global:
     js/local-menu.js: {}
     js/sliders.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
   css:
     base:
