@@ -1,7 +1,7 @@
 {# Menu Steps #}
 
 1. Create a block for the logo with two fields - media image for logo (field_logo) and link (field_logo_link) for the logo
-{# FOLLOWING IS THE BLOCK OVERRIDE FOR THE LOGO #}
+   {# FOLLOWING IS THE BLOCK OVERRIDE FOR THE LOGO #}
 
 {% set logoURL = file_url(content.field_logo[0]['#media'].field_media_image.entity.uri.value) %}
 {% set logoAlt = content.field_logo[0]['#media'].field_media_image.alt %}
@@ -13,85 +13,83 @@
 	</a>
 </div>
 
-
 2. Add the desired links in the main navigation
 3. Place both the block logo and menu in the menubar region.
 4. override the region.html.twig to region--menubar.html.twig
 
 {% set classes = ['container', 'menu-wrapper'] %}
 {% if content %}
-	<div{{attributes.addClass(classes)}}>
-		{{ content }}
-		<div class="hamburger closed-menu">
-			<div class="hamburger-open">
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50" width="50px" height="50px"><path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"/></svg>
-			</div>
-			<div class="hamburger-close d-none">
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50" width="50px" height="50px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg>
-			</div>
-		</div>
-	</div>
+<div{{attributes.addClass(classes)}}>
+{{ content }}
+<div class="hamburger closed-menu">
+<div class="hamburger-open">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50" width="50px" height="50px"><path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"/></svg>
+</div>
+<div class="hamburger-close d-none">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50" width="50px" height="50px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg>
+</div>
+</div>
+</div>
 {% endif %}
-
 
 5. Override the main navigation block to block--mainnavigation.html.twig and add class (menu-main-block) to the nav tag.
 
 6. Override the menu.html.twig to menu--main.html.twig and add class to the ul and li as following.
-{# 
-  <ul{{attributes.addClass('menu-items')}}>
-	and
-	<ul class="menu-items">
-		below that
-  <li{{item.attributes.addClass('menu-item')}}> 
-#}
+   {#
+   <ul{{attributes.addClass('menu-items')}}>
+   and
+   <ul class="menu-items">
+   below that
+   <li{{item.attributes.addClass('menu-item')}}>
+   #}
 
 7. Add the JAVASCRIPT file in js/toggle-menu.js and link it in libraries file , ADD THE FOLLWOING CODE
-/**
- * @file
- * Sass Theme Start behaviors.
- */
-(function ($, Drupal) {
-	Drupal.behaviors.toggleMenu = {
-		attach(context, settings) {
-			const hamburgerToggleMenu = document.querySelector(".hamburger");
-			const slideMenu = document.querySelector(".menu-main-block");
-			const hamburgerOpen = document.querySelector(".hamburger-open");
-			const hamburgerClose = document.querySelector(".hamburger-close");
-			const body = document.querySelector("body");
-			hamburgerToggleMenu?.addEventListener("click", (e) => {
-				e.preventDefault();
-				slideMenu?.classList.toggle("menu-opened");
-				hamburgerClose?.classList.toggle("d-none");
-				hamburgerOpen?.classList.toggle("d-none");
-				body?.classList.toggle("overflow-hidden");
-				body?.classList.toggle("overlay");
-			});
-		},
-	};
-})(jQuery, Drupal);
+   /\*\*
 
+- @file
+- Sass Theme Start behaviors.
+  \*/
+  (function ($, Drupal) {
+  Drupal.behaviors.toggleMenu = {
+  attach(context, settings) {
+  const hamburgerToggleMenu = document.querySelector(".hamburger");
+  const slideMenu = document.querySelector(".menu-main-block");
+  const hamburgerOpen = document.querySelector(".hamburger-open");
+  const hamburgerClose = document.querySelector(".hamburger-close");
+  const body = document.querySelector("body");
+  hamburgerToggleMenu?.addEventListener("click", (e) => {
+  e.preventDefault();
+  slideMenu?.classList.toggle("menu-opened");
+  hamburgerClose?.classList.toggle("d-none");
+  hamburgerOpen?.classList.toggle("d-none");
+  body?.classList.toggle("overflow-hidden");
+  body?.classList.toggle("overlay");
+  });
+  },
+  };
+  })(jQuery, Drupal);
 
 {# ADDING SCSS FILE #}
-. Add this file in SCSS folder _menu-bar.scss and add the following code
+. Add this file in SCSS folder \_menu-bar.scss and add the following code
 $menubar-height: 100px;
 
 body {
-  overflow-x: hidden;
+overflow-x: hidden;
 }
 
 .menubar {
-  height: $menubar-height;
-  background-color: white;
-  border-bottom: 1px solid gray;
-  display: flex;
-  align-items: center;
+height: $menubar-height;
+background-color: white;
+border-bottom: 1px solid gray;
+display: flex;
+align-items: center;
 
-  .menu-wrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 80px;
+.menu-wrapper {
+width: 100%;
+display: grid;
+grid-template-columns: auto 1fr;
+align-items: center;
+gap: 80px;
 
     .logo-link-wrapper {
       img {
@@ -102,26 +100,26 @@ body {
     }
 
     .menu-main-block {
-
       position: absolute;
       top: $menubar-height;
       right: 0;
-      width: 360px;
+      // width: 360px;
+      width: 0;
       background-color: white;
       z-index: 10;
       height: calc(100vh - $menubar-height);
       transition: all 0.3s ease-in-out;
-      transform: translateX(130%);
+      overflow: hidden;
       -webkit-box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
       box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
 
       &.menu-opened {
-        transform: translateX(0) !important;
-      }
+        width: 360px;
 
-      @include tablet {
-        width: 400px;
+        @include tablet {
+          width: 400px;
+        }
       }
 
       @include desktop {
@@ -174,20 +172,6 @@ body {
             line-height: 20px;
             text-decoration: none;
           }
-
-          &:last-child {
-            margin-left: auto;
-            border-bottom: 0;
-
-            a {
-              @include desktop {
-                padding: 16px 24px;
-                border: 2px solid black;
-                border-radius: 1000px;
-              }
-            }
-          }
-
 
           // The Anchor tag - that has the subchild (it should have full height)
           .submenu-anchortag {
@@ -261,31 +245,31 @@ body {
         }
       }
     }
-  }
+
+}
 }
 
 // BASE FUNCTIONALITY CLASSES
 
 .d-none {
-  display: none !important;
+display: none !important;
 }
 
 .overflow-hidden {
-  overflow: hidden;
+overflow: hidden;
 
-  @include desktop {
-    overflow: unset;
-  }
+@include desktop {
+overflow: unset;
+}
 }
 
 .overlay {
-  position: relative;
+position: relative;
 
-
-  &::after {
-    @include desktop {
-      content: unset;
-    }
+&::after {
+@include desktop {
+content: unset;
+}
 
     content: '';
     position: absolute;
@@ -294,7 +278,6 @@ body {
     width: 100%;
     height: calc(100vh - $menubar-height);
     background-color: rgba(0, 0, 0, 0.75);
-  }
+
 }
-
-
+}
