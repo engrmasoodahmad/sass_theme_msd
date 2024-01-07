@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
+}
+
+.slick-initialized {
+  overflow: hidden;
 }
