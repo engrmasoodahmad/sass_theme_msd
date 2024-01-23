@@ -50,6 +50,7 @@ We call a macro which calls itself to render the full tree.
 {% if menu_level == 0 %}
 <ul{{attributes.addClass('menu-items')}}>
 {% else %}
+
 <ul class="menu-items">
 {% endif %}
 {% for item in items %}
@@ -92,6 +93,7 @@ We call a macro which calls itself to render the full tree.
 
 {# ADDING SCSS FILE #}
 . Add this file in SCSS folder \_menu-bar.scss and add the following code
+
 $menubar-height: 110px;
 
 body {
@@ -139,7 +141,7 @@ gap: 40px;
        z-index: 10;
        height: calc(100vh - $menubar-height);
        transition: all 0.3s ease-in-out;
-       //  overflow: hidden;
+       overflow-x: hidden;
        -webkit-box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
        -moz-box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
        box-shadow: -16px 27px 57px -8px rgba(0, 0, 0, 0.75);
@@ -174,6 +176,7 @@ gap: 40px;
            gap: 30px;
          }
 
+         overflow-x: hidden;
          list-style: none;
          margin: 0;
          padding: 0;
