@@ -8,6 +8,7 @@ slick:
       libs/slick.css: {}
 global:
   js:
+    js/toggleMenu.js: {}
     js/copy-it.js: {}
     js/local-menu.js: {}
     js/sliders.js: {}
