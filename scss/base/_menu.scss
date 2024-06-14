@@ -38,6 +38,7 @@ body {
 
       @include desktop {
         justify-self: end;
+        overflow: unset;
       }
 
       width: 0;
@@ -73,11 +74,12 @@ body {
         box-shadow: unset;
       }
 
-      .menu-items {
+      &>.menu-items {
         @include desktop {
           flex-direction: row;
           align-items: center;
           gap: 30px;
+          overflow: unset;
         }
 
         overflow-x: hidden;
