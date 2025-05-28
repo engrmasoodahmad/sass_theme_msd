@@ -50,14 +50,14 @@ $desktop-xlg: 1920;
 }
 
 // 1680px
-@mixin desktop-large() {
+@mixin desktop-lg() {
   @media (min-width: #{$desktop-lg}px) {
     @content;
   }
 }
 
 // 1920px
-@mixin desktop-xlarge() {
+@mixin desktop-xlg() {
   @media (min-width: #{$desktop-xlg}px) {
     @content;
   }
@@ -80,10 +80,11 @@ $desktop-xlg: 1920;
   $clamp-min: if($max-value < $min-value, $max-value, $min-value);
   $clamp-max: if($max-value < $min-value, $min-value, $max-value);
 
-  @return clamp(#{$clamp-min}rem,  #{$v}vw + #{$r}rem, #{$clamp-max}rem);
+  @return clamp(#{$clamp-min}rem, #{$v}vw + #{$r}rem, #{$clamp-max}rem);
 }
+
 /* One should use it like this
 
 .example {
-  font-size: calculate-values (12, 20, 768, 1280);
+  font-size: calculate-value (12, 20, 768, 1280);
 */
