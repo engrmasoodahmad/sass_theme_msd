@@ -2,8 +2,44 @@
 /* One should use it like this
 
 .example {
-  font-size: calculate-values (12, 20, 768, 1280);
+  font-size: calculate-value (12, 20, 768, 1280);
 */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.slick-initialized {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: Montserrat;
   src: url(../fonts/Montserrat_otf/Montserrat-Black.otf);
@@ -202,33 +238,6 @@
 }
 /* stylelint-disable */
 /* stylelint-enable */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-img, picture, video, svg {
-  display: block;
-  max-width: 100%;
-}
-
-input, textarea, button, select {
-  font: inherit;
-}
-
-body {
-  margin: 0;
-}
-
-.slick-initialized {
-  overflow: hidden;
-}
-
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -337,7 +346,7 @@ body {
   content: "✓";
   transform: translate(30%, -50%);
   color: #51dc6c;
-  border: 10px solid #51dc6c;
+  border: 2px solid #51dc6c;
   border-radius: 50%;
   background-color: white;
   font-size: 1.5rem;
@@ -368,7 +377,7 @@ body {
   content: "❌";
   transform: translate(30%, -50%);
   color: #fb5858;
-  border: 10px solid #fb5858;
+  border: 2px solid #fb5858;
   border-radius: 50%;
   background-color: white;
   font-size: 11px;
@@ -399,7 +408,7 @@ body {
   content: "!";
   transform: translate(30%, -50%);
   color: #e9ba43;
-  border: 10px solid #e9ba43;
+  border: 2px solid #e9ba43;
   border-radius: 50%;
   background-color: white;
   font-size: 22px;

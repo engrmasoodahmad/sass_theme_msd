@@ -59,27 +59,31 @@
 		{% endif %}
 
 		<header id="header" class="header" role="banner">
-			<div class="section layout-container clearfix">
-				{{ page.primary_menu }}
-				{{ page.secondary_menu }}
-				{{ page.header }}
-			</div>
+			{{ page.primary_menu }}
+			{{ page.secondary_menu }}
+			{{ page.header }}
 		</header>
+		{% if page.breadcrumb %}
+			<div class="breadcrumb">
+				<aside class="layout-container section clearfix" role="complementary">
+					{{ page.breadcrumb }}
+				</aside>
+			</div>
+		{% endif %}
+
+		{% if page.page_top %}
+			<div class="page-top">
+				{{ page.page_top }}
+			</div>
+		{% endif %}
+
 		{% if page.highlighted %}
 			<div class="highlighted">
-				<aside class="layout-container section clearfix" role="complementary">
-					{{ page.highlighted }}
-				</aside>
+				{{ page.highlighted }}
 			</div>
 		{% endif %}
-		{% if page.featured_top %}
-			<div class="featured-top">
-				<aside class="featured-top__inner section layout-container clearfix" role="complementary">
-					{{ page.featured_top }}
-				</aside>
-			</div>
-		{% endif %}
-		{{ page.breadcrumb }}
+
+
 		<div id="main-wrapper" class="page-layout-main-wrapper layout-container clearfix">
 			<div id="main" class="layout-main clearfix">
 				{% if page.sidebar_first %}
@@ -105,25 +109,26 @@
 			</div>
 		</div>
 		<footer class="site-footer">
-			<div class="layout-container">
-				{% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-					<div class="site-footer__top clearfix">
-						{{ page.footer_first }}
-						{{ page.footer_second }}
-						{{ page.footer_third }}
-						{{ page.footer_fourth }}
+			{% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+				<div class="site-footer__top clearfix">
+					{{ page.footer_first }}
+					{{ page.footer_second }}
+					{{ page.footer_third }}
+					{{ page.footer_fourth }}
+				</div>
+			{% endif %}
+			{% if page.footer_fifth %}
+				<div class="site-footer__bottom">
+					<div class="footer-content">
+						{{ page.footer_fifth }}
 					</div>
-				{% endif %}
-				{% if page.footer_fifth %}
-					<div class="site-footer__bottom">
-						<div class="footer-bg-image">
-							<div class="footer-content">
-								{{ page.footer_fifth }}
-							</div>
-						</div>
-					</div>
-				{% endif %}
-			</div>
+				</div>
+			{% endif %}
 		</footer>
+		{% if page.page_bottom %}
+			<div class="page-bottom">
+				{{ page.page_bottom }}
+			</div>
+		{% endif %}
 	</div>
 </div>
