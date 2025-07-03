@@ -2,7 +2,7 @@
 /* One should use it like this
 
 .example {
-  font-size: calculate-values (12, 20, 768, 1280);
+  font-size: calculate-value (12, 20, 768, 1280);
 */
 @font-face {
   font-family: Montserrat;
@@ -337,7 +337,7 @@ body {
   content: "✓";
   transform: translate(30%, -50%);
   color: #51dc6c;
-  border: 10px solid #51dc6c;
+  border: 2px solid #51dc6c;
   border-radius: 50%;
   background-color: white;
   font-size: 1.5rem;
@@ -368,7 +368,7 @@ body {
   content: "❌";
   transform: translate(30%, -50%);
   color: #fb5858;
-  border: 10px solid #fb5858;
+  border: 2px solid #fb5858;
   border-radius: 50%;
   background-color: white;
   font-size: 11px;
@@ -399,7 +399,7 @@ body {
   content: "!";
   transform: translate(30%, -50%);
   color: #e9ba43;
-  border: 10px solid #e9ba43;
+  border: 2px solid #e9ba43;
   border-radius: 50%;
   background-color: white;
   font-size: 22px;
