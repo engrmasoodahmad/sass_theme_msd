@@ -6,9 +6,16 @@ slick:
     component:
       libs/slick-theme.css: {}
       libs/slick.css: {}
+nice_select:
+  js:
+    libs/nice-select/js/jquery.nice-select.min.js: {}
+  css:
+    component:
+      libs/nice-select/css/nice-select.css: {}
 global:
   js:
     js/toggleMenu.js: {}
+    js/nice-select.js: {}
     js/copy-it.js: {}
     js/local-menu.js: {}
     js/sliders.js: {}
