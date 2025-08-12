@@ -6,6 +6,7 @@ package: Custom
 core: 8.x
 core_version_requirement: ^8 || ^9 || ^10 || ^11
 libraries:
+  - sass_theme_msd/nice_select
   - sass_theme_msd/global
   - sass_theme_msd/slick
 regions:
