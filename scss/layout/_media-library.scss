@@ -1,0 +1,159 @@
+#media-library-wrapper {
+  display: flex;
+  margin: -1rem -1.5rem -1rem -1rem;
+
+  .js-media-library-menu {
+    list-style: none;
+    width: 100%;
+
+    @include tablet {
+      width: 250px;
+    }
+
+    li {
+      a {
+        border-bottom: 1px solid #ccc;
+        display: block;
+        text-decoration: none;
+        padding: 16px 8px;
+        border-right: 1px solid #ccc;
+        padding-left: 32px;
+
+        &:focus-visible {
+          outline: 0;
+          border-bottom: 2px solid #198754;
+        }
+
+        &.active {
+          border-right: 0;
+          box-shadow: -7px 0 2px 0.25rem rgba(0, 0, 0, 0.1);
+          border-left: 5px solid #198754;
+        }
+      }
+    }
+  }
+}
+
+#media-library-content {
+  padding: 16px;
+
+  #media-library-add-form-wrapper {
+    background-color: white;
+    box-shadow: 0 2px 0.25rem rgba(0, 0, 0, 0.1);
+    border: 1px solid #dedfe4;
+    padding: 20px;
+    margin-bottom: 16px;
+
+    input[type="file"] {
+      padding: 10px 15px;
+      border: 1px solid #1d1d1d;
+      margin-bottom: 4px;
+    }
+
+  }
+
+  .views-exposed-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 0.25rem rgba(0, 0, 0, 0.1);
+    border: 1px solid #dedfe4;
+    padding: 20px;
+
+    input,
+    .nice-select {
+      margin-bottom: 0;
+      padding-inline: 20px;
+    }
+
+    input[type="submit"] {
+      height: 40px;
+      @extend .btn-secondary;
+    }
+  }
+
+  header {
+    display: flex;
+    align-self: flex-end;
+    margin: 1em 0;
+    text-align: right;
+
+    a {
+      padding-left: 1.2rem;
+      align-items: center;
+    }
+
+    .views-display-link-widget {
+
+      margin-right: 0.9375rem;
+      background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23333333' d='M10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3A1.5 1.5 0 0 1 10.5 9zm-8 0h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3A1.5 1.5 0 0 1 2.5 9zm8-8h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3A1.5 1.5 0 0 1 10.5 1zm-8 0h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3A1.5 1.5 0 0 1 2.5 1z'/%3e%3c/svg%3e") left 0 no-repeat;
+    }
+
+    .views-display-link-widget_table {
+      background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3e%3cpath fill='%23333333' d='M7 15a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 0 3H7zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM7 9.5a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 0 3H7zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM7 4a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 0 3H7zM2.5 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z'/%3e%3c/svg%3e") left 0 no-repeat;
+    }
+  }
+
+  .media-library-views-form__rows {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .js-media-library-item {
+      padding: 0.5rem;
+      vertical-align: top;
+      outline: none;
+      background: #fff;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0.4375rem;
+        left: 0.4375rem;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        content: "";
+        transition: border-color 0.2s, color 0.2s, background 0.2s;
+        pointer-events: none;
+        border: 1px solid #dbdbdb;
+        border-radius: 2px;
+        box-shadow: 0 2px 0.25rem rgba(0, 0, 0, 0.1);
+      }
+
+      .form-checkbox {
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        left: 1rem;
+        display: block;
+      }
+
+      .js-media-library-item-preview {
+        overflow: hidden;
+        text-align: center;
+        background-color: #ebebeb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 11.25rem;
+          object-fit: contain;
+          object-position: center center;
+        }
+      }
+
+      .media-library-item__attributes {
+        padding: 10px;
+      }
+    }
+  }
+}
