@@ -67,7 +67,7 @@
       var $options = $select.find('option');
       var $selected = $select.find('option:selected');
       
-      $dropdown.find('.current').html($selected.data('display') || $selected.text());
+      $dropdown.find('.current').text($selected.data('display') || $selected.text());
       
       $options.each(function(i) {
         var $option = $(this);
@@ -79,7 +79,7 @@
           .addClass('option' +
             ($option.is(':selected') ? ' selected' : '') +
             ($option.is(':disabled') ? ' disabled' : ''))
-          .html($option.text())
+          .text($option.text())
         );
       });
     }
